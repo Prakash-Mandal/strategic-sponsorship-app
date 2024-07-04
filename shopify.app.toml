@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "6133f0a1c33192bd682a143d6c8b66de"
+name = "strategic-sponsorship-app"
+handle = "strategic-sponsorship-app-3"
+application_url = "https://biz-audience-agency-roberts.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-79cad9de.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://biz-audience-agency-roberts.trycloudflare.com/auth/callback",
+  "https://biz-audience-agency-roberts.trycloudflare.com/auth/shopify/callback",
+  "https://biz-audience-agency-roberts.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
